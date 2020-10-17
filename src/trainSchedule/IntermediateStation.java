@@ -7,6 +7,8 @@ public class IntermediateStation {
 	
 	public IntermediateStation() {
 		super();
+		this.intermediateStation = " ";
+		this.time = new LeavingTime(23, 59);
 	}
 	
 	public IntermediateStation(String intermediateLeavingTime, int hour, int minute) {
@@ -29,6 +31,11 @@ public class IntermediateStation {
 
 	public void setTime(LeavingTime time) {
 		this.time = time;
+	}
+
+	@Override
+	public String toString() {
+		return intermediateStation + " at " + time + " ";
 	}
 	
 	

@@ -8,19 +8,19 @@ import java.util.Comparator;
 
 public class AllTravels implements Comparator<Travel> {
 
-	private ArrayList<Travel> allTravels;
+	private ArrayList<Travel> allTravels = new ArrayList<>();
 
 	public AllTravels() {
 		super();
 	
 	}
 	
-	public boolean addTravel(Travel newTravel) {
+	public void addTravel(Travel newTravel) {
 		if (newTravel == null)
-			return false;
+			return;
 		else
 			allTravels.add(newTravel);
-		return true;
+			return;
 	}
 	
 	
@@ -30,9 +30,21 @@ public class AllTravels implements Comparator<Travel> {
 
 
 
+	public ArrayList<Travel> getAllTravels() {
+		return allTravels;
+	}
+
 	@Override
 	public int compare(Travel o1, Travel o2) {
 		return ((Travel) o1).getLeavingTime().compareTo(((Travel) o2).getLeavingTime());
+	}
+
+	@Override
+	public String toString() {
+			for (Travel t : allTravels) {
+				System.out.println(t);
+			}
+		return " ";
 	}
 
 }
